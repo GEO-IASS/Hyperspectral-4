@@ -19,7 +19,7 @@ Serial myPort;
 
 
 void setup() {
-  size(1280, 1024, P3D);
+  size(1681, 1051, P3D);
 
   img = new PImage[nb_images];
   for (int i=0; i<nb_images; i++) {
@@ -40,7 +40,8 @@ void setup() {
 }
 
 void draw() {
-  no_image = int(map(mouseX, 0, width, 0, nb_images));
+//  no_image = int(map(mouseX, 0, width, 0, nb_images));
+no_image = int(Pot1);
   background(img[no_image]);
 }
 
@@ -62,10 +63,9 @@ void serialEvent(Serial myPort) {
     // potvalue variables:
     if (potvalue.length >=3) {
       // map them to the range 0-255:
-      Pot1 = map(potvalue[0], 0, 1023, 0, 3);
+      Pot1 = map(potvalue[0], 0, 1023, 0, 3.99);
       Pot2 = map(potvalue[1], 0, 1023, 0, 255);
       Pot3 = map(potvalue[2], 0, 1023, 0, 255);
     }
   }
 }
-
