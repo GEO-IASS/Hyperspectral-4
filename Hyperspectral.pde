@@ -63,7 +63,8 @@ void serialEvent(Serial myPort) {
     // potvalue variables:
     if (potvalue.length >=3) {
       // map them to the range 0-255:
-      Pot1 = map(potvalue[0], 0, 1023, 0, 3.99);
+//      Pot1 = map(potvalue[0], 0, 1023, 0, 3.99);
+      Pot1 = potvalue[0];
       Pot2 = map(potvalue[1], 0, 1023, 0, 255);
       Pot3 = map(potvalue[2], 0, 1023, 0, 255);
     }
